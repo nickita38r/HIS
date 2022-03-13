@@ -1,36 +1,35 @@
-@import url('https: //fonts.googleapis.com/css?family=Poppins: 200,300,400,500,600,700,800,900&display=swap');
 *{
 	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
 }
-body{
-	background: #000;
-	min-height: 200vh;
+body
+{
+	background: #E6E6E6;
+	min-height: 300vh;
 }
 header{
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 3em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	transition: 0.6s;
-	padding: 40px 100px;
+	padding: 5px 50px;
 	z-index: 1000;
+	font-family: 'Montserrat';
 }
-header .sticky{
-	padding: 5px 100px;
-	background: #fff;
+header.sticky{
+	padding: 5px 50px;
+	background:#000;
 }
 header .logo{
 	position: relative;
-	font-weight: 700;
+	font-weight: 400;
 	color: #fff;
 	text-decoration: none;
-	font-size: 2em;
+	font-size: 1.5em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	transition: 0.6s;
@@ -39,8 +38,6 @@ header .logo{
 header ul{
 	position: relative;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 header ul li{
@@ -53,14 +50,50 @@ header ul li a{
 	margin: 0 15px;
 	text-decoration: none;
 	color: #fff;
-	letter-spacing: 2px;
-	font-weight: 500px;
+	font-style: normal;
+	font-weight: 400;
 	transition: 0.6s;
 }
-.banner{
+
+
+
+.banner
+{
 	position: relative;
 	width: 100%;
-	height: 100vh;
-	background: url(imgBackground.jpg);
 	background-size: cover ;
+}
+.banner img
+{
+	position: relative;
+	width: 100%;
+	background-size: cover ;
+}
+
+.banner span
+{
+	position	: absolute;
+	color:#fff;
+	font-family: 'Montserrat';
+}
+
+.banner-title1
+{
+	top		: 4em;
+	left    : 18em;
+	
+}
+.banner_title2
+{
+
+	top		: 5em;
+	left    : 34.5em;
+
+}
+.banner_title3
+{
+
+	top		: 4em;
+	left    : 48em;
+
 }
