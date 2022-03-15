@@ -1,13 +1,9 @@
 *{
-	margin: 0; padding: 0;
-	box-sizing: border-box;
-	outline: none; border: none;
-	text-decoration: none;
-	text-transform: capitalize;
+
 }
 body
 {
-	background: #E6E6E6;
+	background: #dfd8d8;
 	min-height: 300vh;
 }
 
@@ -62,4 +58,31 @@ body
 	top		: 4em;
 	left    : 48em;
 
+}
+
+.black
+{
+	background: rgb(0, 0, 0);
+}
+
+.text-context
+{
+	color:#fff;
+	font-weight: 300;
+	font-family: 'Montserrat';
+}
+
+.container-context
+{
+	margin-left: 4rem;
+	margin-right: 4rem;
+}
+.conteiner-context2
+{
+	padding-top: 2em;
+	margin-left: 6rem;
+	margin-right: 6rem;
+}
+.foto2 {
+	padding-top: 10em;
 }
