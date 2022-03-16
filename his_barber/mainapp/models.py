@@ -19,3 +19,9 @@ class SpecialOffer(models.Model):
     offer = models.CharField(max_length=200, verbose_name='Cпециальное предложение')
     def __str__(self):
         return f'{self.offer}'
+
+class Question(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Вопрос')
+    answer = models.TextField(verbose_name='Ответ')
+    def __str__(self):
+        return f'{self.title}'

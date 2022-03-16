@@ -1,0 +1,42 @@
+details summary::-webkit-details-marker {
+	display: none
+  }
+  
+details > summary {
+	list-style: none;
+	text-decoration:none;
+}
+
+.accordion {
+	margin-top: 4em;
+	margin-left: 6rem;
+	margin-right: 6rem;
+	font-family: 'Montserrat';
+	text-decoration:none;
+}
+
+.card {
+	background-color: #000;
+	margin-top: 0.1em;
+    border-radius: 0;
+    
+}
+
+.card .card-body {
+	background-color: rgb(255, 255, 255);
+	font-size: 0.9em;
+    
+}
+
+.question
+{
+    height: 1.5rem;
+	line-height: 1.5rem;
+    
+}
+
+.question p
+{
+    color: #fff;
+    margin: 0;
+}

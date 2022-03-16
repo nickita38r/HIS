@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-question.css' %}">
     <title>HIS</title>
   </head>
   <body>  
@@ -26,7 +27,7 @@
           <button class="botton-contact">Контакты</button>
         </div>
       </header>
-      
+    
       <section class="banner">
         <img src="{% static 'img/border3.jpg' %}" alt="border">
         <span class="banner-title1">
@@ -40,15 +41,14 @@
           <p align="center">Салон  <font color="#D66228">Premium</font><br>класса для мужчин</p>  
         </span>  
       </section>
-      
+    
       <div class="contact">
-        <div class="row">
+
             <p>ВРЕМЯ РАБОТЫ БАРБЕР ШОПА<br>(10:00 - 22:00 БЕЗ ВЫХОДНЫХ)</p>
             <p>КРАСНОЯРСК<br>АЛЕКСЕЕВА 48А</p>
             <p style="padding-left:6rem;">+7 (800) 555 35 35<br>+7 (800) 555 35 35</p>
-        </div>
       </div>
-
+    
 
 
       <div class="price">
@@ -89,14 +89,63 @@
               <img src="{% static 'img/photo2.png' %}" width="100%" alt="foto2">
             </div>
             <div class="col-md-4">
-              <img src="{% static 'img/photo3.png' %}" width="95.5%" alt="foto3">
+              <img src="{% static 'img/photo3.png' %}" width="100%" alt="foto3">
             </div>
             <div class="col-md-4">
-              <img src="{% static 'img/photo4.png' %}" width="97%" alt="foto4">
+              <img src="{% static 'img/photo4.png' %}" width="100%" alt="foto4">
             </div>
           </div>
         </div>
       </div>
+      <div class="title">
+        <div class="title-text" >
+          ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ 
+        </div>
+      </div>
+
+    
+
+      <div class="accordion">
+          <div class="row">
+            <div class="col-md-6">
+              {% for question in qustionLeft %}
+              <details class="card">
+                  <summary class="card-header">
+                    <span class="question">
+                      <p>{{ question.title }}</p>
+                    </span>
+                    
+                  </summary>
+                  <div class="card-body">
+                    {{ question.answer }}
+                  </div>
+                </details>
+              {% endfor %}
+            </div> 
+             
+            <div class="col-md-6">
+              {% for question in qustionRight %}
+              <details class="card">
+                <summary class="card-header">
+                  <p style="color:#fff;">{{ question.title }}</p>
+                </summary>
+                <div class="card-body">
+                  {{ question.answer }}
+                </div>
+              </details>
+              {% endfor %}
+            </div>
+
+          </div>
+      </div>
+      
+      <div class="row">
+        <div class="question">
+          <div class="col-left"></div>
+          <div class="col-right"></div>
+        </div>
+      </div>
+
     
       
       

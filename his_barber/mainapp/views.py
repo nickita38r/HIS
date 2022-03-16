@@ -6,6 +6,7 @@ from .models import (
     ServiceType,
     ServiceAlbum,
     SpecialOffer,
+    Question,
 )
 
 class BaseView(View):
@@ -14,9 +15,12 @@ class BaseView(View):
         types = ServiceType.objects.all()
         album = ServiceAlbum.objects.all()
         offer = SpecialOffer.objects.all()
+        questions = [x for x in Question.objects.all()]
         context = {
             'type' : types,
             'album': album,
-            'offers': offer
+            'offers': offer,
+            'qustionLeft': questions[:int(len(questions)/2)],
+            'qustionRight': questions[int(len(questions)/2):],
         }
         return render(request, 'base.html', context)

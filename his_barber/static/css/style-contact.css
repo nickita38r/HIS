@@ -1,4 +1,4 @@
-.contact .row
+.contact
 {
     display: flex;
     align-items: center;
@@ -6,7 +6,7 @@
     padding: 1rem 15%;
 }
 
-.contact .row p 
+.contact  p 
 {
     margin: 0 0 0 0;
 }
