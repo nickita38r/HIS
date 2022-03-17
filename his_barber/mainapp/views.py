@@ -1,33 +1,32 @@
 from django.shortcuts import render
 
 from django.views.generic import DetailView, View
+from matplotlib.style import context
 
 from .models import (
     ServiceType,
-    ServiceAlbum,
     SpecialOffer,
     Question,
+    Barber
 )
 
 class BaseView(View):
 
-
-
     def get(self, request, *args, **kwargs):
-        init = {}
         types = ServiceType.objects.all()
-        album = ServiceAlbum.objects.all()
         offer = SpecialOffer.objects.all()
+        barber = Barber.objects.all()
         questions = Question.objects.all()
-        for name in types: init[str(name.name)] = [x for x in album if x.kind.name == name.name]
-        print(init)
         context = {
-            'perem':{'1':123},
-            'names' : [x.name for x in ServiceType.objects.all()],
-            'album': init,
+            'types':types,
             'offers': offer,
+            'barbers': barber,
             'qustionLeft': questions[:int(len(questions)/2)],
             'qustionRight': questions[int(len(questions)/2):],
         }
         return render(request, 'base.html', context)
 
+class BarberView(View):
+    def get(self, request, *args, **kwargs):
+        barber = Barber.objects.all()
+        

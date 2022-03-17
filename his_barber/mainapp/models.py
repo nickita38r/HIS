@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class ServiceType(models.Model):
     name = models.CharField(max_length=30, verbose_name='Тип услуги')
@@ -6,7 +7,7 @@ class ServiceType(models.Model):
         return f'{self.name}'
 
 class ServiceAlbum(models.Model):
-    kind = models.ForeignKey(ServiceType, on_delete=models.CASCADE, verbose_name = 'Тип услуги')
+    kind = models.ForeignKey(ServiceType, on_delete=models.CASCADE, verbose_name = 'Тип услуги', related_name='price')
     name = models.CharField(max_length=50, verbose_name = 'Наименование услуги')
     priceBarber = models.IntegerField(verbose_name = 'Цена барбера')
     priceBigBarber = models.IntegerField(verbose_name = 'Цена старшего барбера')
@@ -25,3 +26,19 @@ class Question(models.Model):
     answer = models.TextField(verbose_name='Ответ')
     def __str__(self):
         return f'{self.title}'
+
+class Barber(models.Model):
+    image = models.ImageField(verbose_name='Аватарка')
+    firstName = models.CharField(max_length=30, verbose_name='Имя')
+    lastName = models.CharField(max_length=30, verbose_name='Фамилия')
+    slug = models.SlugField(unique=True)
+    
+    def __str__(self):
+        return f'{self.firstName} {self.lastName}'
+
+    def get_absolute_url(self):
+        return reverse('barber_detail', kwargs={'slug': self.slug})
+
+class GalaryHairstyle(models.Model):
+    barber = models.ForeignKey(Barber, on_delete=models.CASCADE, verbose_name = 'Барбер', related_name='galary')
+    image = models.ImageField(verbose_name='Фото')

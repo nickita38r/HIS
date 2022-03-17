@@ -1,15 +1,13 @@
-.bar
-{
+.tab {
     overflow: hidden;
-}
-
-.bar .bar-button
-{
-    white-space: normal;
-    padding: 8px 16px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0;
-}
+  }
+  
+  .tab a.active
+  {
+    color: #D66228;
+  }
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+  }
