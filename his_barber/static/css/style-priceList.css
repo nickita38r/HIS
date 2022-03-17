@@ -1,0 +1,15 @@
+.bar
+{
+    overflow: hidden;
+}
+
+.bar .bar-button
+{
+    white-space: normal;
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+}
