@@ -22,8 +22,8 @@ class BaseView(View):
         for name in types: init[str(name.name)] = [x for x in album if x.kind.name == name.name]
         print(init)
         context = {
-            'perem':[123456],
-            'types' : [x.name for x in ServiceType.objects.all()],
+            'perem':{'1':123},
+            'names' : [x.name for x in ServiceType.objects.all()],
             'album': init,
             'offers': offer,
             'qustionLeft': questions[:int(len(questions)/2)],

@@ -59,8 +59,8 @@
         <div class="price">
           <div class="offer">
             <div class="bar">
-              {% for type in types %}
-                <button class="bar-button" onclick="openCity('{{type.name}}')">{{type}}</button>
+              {% for name in names %}
+                <button class="bar-button" onclick="openCity('{{type.name}}')">{{name}}</button>
               {% endfor %}
             </div>
 
@@ -74,6 +74,8 @@
           <div class="specialOffer"></div>
         </div>
       </div>
+
+      {{perem.1}}
 
       <div class="title">
         <div class="title-text" >
