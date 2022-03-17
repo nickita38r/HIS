@@ -127,7 +127,10 @@
               {% for question in qustionRight %}
               <details class="card">
                 <summary class="card-header">
-                  <p style="color:#fff;">{{ question.title }}</p>
+                  <span class="question">
+                    <p>{{ question.title }}</p>
+                  </span>
+                  
                 </summary>
                 <div class="card-body">
                   {{ question.answer }}
@@ -138,6 +141,12 @@
 
           </div>
       </div>
+      <div class="title">
+        <div class="title-text" >
+          ОТЗЫВЫ 
+        </div>
+      </div>
+      
       
       <div class="row">
         <div class="question">
@@ -145,6 +154,8 @@
           <div class="col-right"></div>
         </div>
       </div>
+      
+
 
     
       
