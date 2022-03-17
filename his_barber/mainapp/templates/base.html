@@ -51,15 +51,29 @@
       </div>
     
 
-
-      <div class="price">
+      <div class="block-price">
         <div class="title">
           <span class="title-text">
             УСЛУГИ И ЦЕНЫ  БАРБЕРШОПА
           </span>
         </div>
-        <h5>Тут будет прайс
-        </h5>
+        <div class="price">
+          <div class="offer">
+            <div class="bar">
+              {% for type in types %}
+                <button class="bar-button" onclick="openCity('{{type.name}}')">{{type}}</button>
+              {% endfor %}
+            </div>
+
+              {% for type in types %} 
+              <div id="{{type}}" class="w3-container city">
+                {{album.type}}
+              </div>
+              {% endfor %}
+          
+
+          <div class="specialOffer"></div>
+        </div>
       </div>
 
       <div class="title">
