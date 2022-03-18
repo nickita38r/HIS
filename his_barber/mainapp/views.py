@@ -28,5 +28,4 @@ class BaseView(View):
 
 class BarberView(View):
     def get(self, request, *args, **kwargs):
-        barber = Barber.objects.all()
-        
+        return render(request, 'barber.html', context = {'barbers':Barber.objects.all()})

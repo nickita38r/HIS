@@ -134,6 +134,31 @@
           </div>
         </div>
       </div>
+
+      <div class="block-uns">
+        <div class="block-uns-title">
+          <div class="title">
+            <div class="title-text" >
+              КОМАНДА
+            </div>
+          </div>
+        </div>
+
+        <div class="block-uns-context">
+          <div class="row">
+            {% for barber in barbers %}
+              <div class="col-md-4 text-center">
+                {{barber.lastName}}
+                {{barber.firstName}}
+                {{barber.get_absolute_url}}
+                <a href="{{barber.get_absolute_url}}">перейти</a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+
       <div class="title">
         <div class="title-text" >
           ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ 
