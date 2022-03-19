@@ -1,9 +1,6 @@
-$(function  (){
-  $('.block-uns-context').slick({
-    arrows: true,
-    infinite: true,
-    slidesToShow: 4,
-    
 
-  })
-})
+$('.block-uns-context').slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+});
