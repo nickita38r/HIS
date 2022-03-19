@@ -1,16 +1,9 @@
-.team {
-    background-color: black;
+.team
+{
+    padding: 0 5rem;
 }
-.photo_barber {
-    background-position: no-repeat;
-    background-size: cover;
-    background-position: center;
-    
-   
-}
-.team .block-uns-context {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    display: block;
 
+.team img
+{
+    margin:0;
 }

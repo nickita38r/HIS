@@ -74,7 +74,6 @@
     .carousel-inner .active.carousel-item+.carousel-item+.carousel-item+.carousel-item {
       position: absolute;
       top: 0;
-      right: -33.3333%;
       z-index: -1;
       display: block;
       visibility: visible;

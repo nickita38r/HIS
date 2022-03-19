@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="{% static 'css/style-question.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-reviews.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-priceList.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-slider.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-hearstyle.css' %}">
     <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
     <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-slider.css' %}">
     
 
     <title>HIS</title>
@@ -141,90 +141,18 @@
         </div>
       </div>
 
-
-        <div class="title">
-          <div class="title-text" >
-            КОМАНДА
-          </div>
-        </div>
-
-
-
-        <div class="block-uns-context">
-          {% for barber in barbers %}
-          <div class="slide">
-            <div class="photo_barber" >
-              <img src="{{barber.image.url}} " style="margin:0;" alt="" width="200" height="300";>
-              <div class="text_slide">
-                {{barber.lastName}}
-                {{barber.firstName}}<br>
-                <a href="{{barber.get_absolute_url}}">перейти</a>
-              </div>
-              <div class="text_slide_link">
-          {% endfor %}   
-
-        <div class="team">
-          <div class="block-uns-context">
-            {% for barber in barbers %}
-            <div class="slide">
-              <div class="photo_barber col-md-3" >
-                <img src="{{barber.image.url}}" alt="" width="100%";>
-                <div class="text_slide">
-                  {{barber.lastName}}
-                  {{barber.firstName}}
-                  <a href="{{barber.get_absolute_url}}">перейти</a>
-                </div>
-
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-        
-
-        <div class="hearstyle">
-          <div class="title">
-            <div class="title-text" >
-              КОМАНДА
+      
+      <div class="team">
+        <div class="row block-uns-context">
+        {% for barber in barbers %}
+          <div class="col-md-3" style="padding: 0 0;">
+            <div class="card" >
+              <img src="{{barber.image.url}}" alt="" style="aspect-ratio: 2 / 3;" ;>
             </div>
           </div>
-          <div class="context">
-
-            <div class="container-fluid">
-              <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner row w-100 mx-auto">
-                  
-                  {% for image in hearstyle %}
-                    {% if image.id == 1 %}
-                      <div class="carousel-item col-md-4 active">
-                    {% else %}
-                      <div class="carousel-item col-md-4">
-                    {% endif %}
-                      <div class="card">
-                        <img class="card-img-top" src="{{image.image.url}}" style="aspect-ratio: 2 / 3;" alt="Card image cap">
-                      </div>
-                    </div>
-                  {% endfor %}
-    
-                </div>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-12 text-center mt-4">
-                      <a class="btn btn-outline-secondary mx-1 prev" href="javascript:void(0)" title="Previous">
-                        <i class="fa fa-lg fa-chevron-left"></i>
-                      </a>
-                      <a class="btn btn-outline-secondary mx-1 next" href="javascript:void(0)" title="Next">
-                        <i class="fa fa-lg fa-chevron-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+          {% endfor %}
         </div>
-
+      </div>
         
 
       <div class="title">
