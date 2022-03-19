@@ -1,12 +1,4 @@
-$(function  (){
-  $('.block-uns-context').slick({
-    arrows: true,
-    infinite: true,
-    slidesToShow: 4,
-    
 
-  })
-});
 (function ($) {
   "use strict";
   // Auto-scroll
@@ -46,3 +38,10 @@ $(function  (){
   });
 })
 (jQuery);
+
+$('.block-uns-context').slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+});
+

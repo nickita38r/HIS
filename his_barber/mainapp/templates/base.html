@@ -149,6 +149,7 @@
         </div>
 
 
+
         <div class="block-uns-context">
           {% for barber in barbers %}
           <div class="slide">
@@ -161,13 +162,26 @@
               </div>
               <div class="text_slide_link">
                 
-              </div>
 
+        <div class="team">
+          <div class="block-uns-context">
+            {% for barber in barbers %}
+            <div class="slide">
+              <div class="photo_barber col-md-3" >
+                <img src="{{barber.image.url}}" alt="" width="100%";>
+                <div class="text_slide">
+                  {{barber.lastName}}
+                  {{barber.firstName}}
+                  <a href="{{barber.get_absolute_url}}">перейти</a>
+                </div>
+
+              </div>
             </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
         
+
         <div class="hearstyle">
           <div class="title">
             <div class="title-text" >
@@ -210,6 +224,7 @@
 
           </div>
         </div>
+
         
 
       <div class="title">
