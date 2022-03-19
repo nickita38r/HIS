@@ -41,4 +41,5 @@ class Barber(models.Model):
 
 class GalaryHairstyle(models.Model):
     barber = models.ForeignKey(Barber, on_delete=models.CASCADE, verbose_name = 'Барбер', related_name='galary')
+    chek = models.BooleanField(default=False)
     image = models.ImageField(verbose_name='Фото')
