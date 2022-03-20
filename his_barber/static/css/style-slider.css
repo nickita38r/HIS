@@ -1,9 +1,35 @@
 .team
 {
     padding: 0 5rem;
+    background-color: black;
 }
 
 .team img
 {
     margin:0;
+    
 }
+.card .team_text {
+    position: absolute;
+    bottom: 0;
+    color: aliceblue;
+    
+    
+    
+}
+.team .card {
+    position: relative;
+    text-align: center;
+    
+}
+.team a {
+    color: #ffffff; 
+    text-decoration: none; 
+    opacity: .3;
+   }
+.team a:hover {
+    color: #ffffff; 
+    text-decoration: underline; 
+    text-decoration: none;
+    opacity: 1;
+   }

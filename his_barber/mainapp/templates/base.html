@@ -141,13 +141,41 @@
         </div>
       </div>
 
-      
+      <div class="title">
+        <div class="title-text" >
+          КОМАНДА 
+        </div>
+      </div>
       <div class="team">
         <div class="row block-uns-context">
         {% for barber in barbers %}
           <div class="col-md-3" style="padding: 0 0;">
             <div class="card" >
               <img src="{{barber.image.url}}" alt="" style="aspect-ratio: 2 / 3;" ;>
+              <div class="team_text">
+              {{barber.lastName}}
+              {{barber.firstName}}<br>
+              <a href="{{barber.get_absolute_url}}">перейти</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="title">
+        <div class="title-text" >
+          НАШИ РАБОТЫ 
+        </div>
+      </div>
+      <div class="work">
+        <div class="row block-uns-work">
+          {% for image in hearstyle %}
+          <div class="col-md-4" style="padding: 0 0;">
+            <div class="card" >
+              <img src="{{image.image.url}}" alt="" style="aspect-ratio: 2 / 3;" ;>
+              <div class="work_text">
+                <font>Текст синего цвета</font>
+              </div>
             </div>
           </div>
           {% endfor %}
