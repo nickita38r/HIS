@@ -13,10 +13,29 @@
     position: absolute;
     bottom: 0;
     color: aliceblue;
-    
-    
-    
+    width: 100%;  
+        
 }
+.team_text:hover    .team_text_up {
+    display: block;
+    }
+
+.team_text_up {
+        display: none;        
+        }  
+.semi-transparent-button {
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 3%;        
+    max-width: 200px;
+    border: 2px solid #ffffff;        
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;       
+    transition: all 0.3s ease-out;
+          }
 .team .card {
     position: relative;
     text-align: center;
@@ -25,11 +44,11 @@
 .team a {
     color: #ffffff; 
     text-decoration: none; 
-    opacity: .3;
+    
    }
 .team a:hover {
     color: #ffffff; 
     text-decoration: underline; 
     text-decoration: none;
-    opacity: 1;
+    opacity: .5;
    }

@@ -146,16 +146,22 @@
           КОМАНДА 
         </div>
       </div>
+      
+      
+
       <div class="team">
         <div class="row block-uns-context">
         {% for barber in barbers %}
           <div class="col-md-3" style="padding: 0 0;">
             <div class="card" >
-              <img src="{{barber.image.url}}" alt="" style="aspect-ratio: 2 / 3;" ;>
-              <div class="team_text">
+              <img src="{{barber.image.url}}" alt="" style="aspect-ratio: 4 / 5;" ;>
+              <div class="team_text" style="background: rgba(44, 42, 42, 0.5); ">
               {{barber.lastName}}
               {{barber.firstName}}<br>
-              <a href="{{barber.get_absolute_url}}">перейти</a>
+              <div class="team_text_up">
+                <hr color="#fff" size="20" width="130">
+              <a class="semi-transparent-button" href="{{barber.get_absolute_url}}">перейти</a>
+              </div>
               </div>
             </div>
           </div>
@@ -232,6 +238,9 @@
           ОТЗЫВЫ 
         </div>
       </div>
+      
+      
+      
       
       <div class="reviews_all">
         <div class="row">
