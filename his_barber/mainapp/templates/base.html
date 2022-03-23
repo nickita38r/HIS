@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
     <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     
 
     <title>HIS</title>
@@ -79,6 +80,7 @@
                   <div class="col-md-3">Старший барбер</div>
                   <div class="col-md-3">Топ барбер</div>
                 </div>
+                <hr color="#000000">
                 {% for type in types %}
                   <div id="{{type.name}}" class="tabcontent">
                     {% for item in type.price.all %}
@@ -92,9 +94,13 @@
                   </div>
                 {% endfor %}
               </div>
+              
             </div>
-            <div class="col-md-4"></div>
+            
+            <div class="spec col-md-4"><div class="text_spec"><p> СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ </p>  <p class="spec_text">СКИДКА 20% НА ПЕРВУЮ СТРИЖКУ <br> КЭШБЭК ДО 7% ПО КАРТЕ «СВОИ ЛЮДИ»<br> ГАРАНТИЯ НА СТРИЖКУ И ОФОРМЛЕНИЕ БОРОДЫ<br>
+              В ТЕЧЕНИИ 7 ДНЕЙ С МОМЕНТА ВИЗИТА</p></div></div>
           </div>
+            
         </div>
         <div class="price">
 
@@ -159,8 +165,8 @@
               {{barber.lastName}}
               {{barber.firstName}}<br>
               <div class="team_text_up">
-                <hr color="#fff" size="20" width="130">
-              <a class="semi-transparent-button" href="{{barber.get_absolute_url}}">перейти</a>
+                <hr color="#fff"  width="140" >
+              <a class="semi-transparent-button" href="{{barber.get_absolute_url}}">ЗАПИСАТЬСЯ К БАРБЕРУ</a>
               </div>
               </div>
             </div>
@@ -180,7 +186,7 @@
             <div class="card" >
               <img src="{{image.image.url}}" alt="" style="aspect-ratio: 2 / 3;" ;>
               <div class="work_text">
-                <p>Текст синего цвета</p>
+                Работу выполнил Иван Иванов
               </div>
             </div>
           </div>
@@ -188,14 +194,11 @@
         </div>
       </div>
         
-
       <div class="title">
         <div class="title-text" >
           ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ 
         </div>
       </div>
-
-    
 
       <div class="accordion">
           <div class="row">
@@ -230,7 +233,6 @@
               </details>
               {% endfor %}
             </div>
-
           </div>
       </div>
       <div class="title">
@@ -239,9 +241,7 @@
         </div>
       </div>
       
-      
-      
-      
+
       <div class="reviews_all">
         <div class="row">
           <div class="col-md-3">
@@ -260,9 +260,34 @@
                 </p>
               </span>
             </div>
-          </div>         
+          </div>           
         </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="head_reviews">
+              <span class="head">
+                <p style="margin : 0;">
+                  ВЛАДИМИР КАИНОВ
+                  ★★★★★  10.20.2022
+                </p>
+              </span>  
+            </div>
+            <div class="body_reviews">
+              <span class="reviews"></span>  
+                <p>
+                  Лучший барбершоп из тех, что я успел посетить в Красноярске. Арт-директор — топовый барбер. Недешево, но цена оправдана.
+                </p>
+              </span>
+            </div>
+          </div>           
+        </div>
+      </div>
+      <div class="footer">
+      <img src="{% static 'img/footer.jfif' %}"   alt="foto2">  
+      <footer > 
+      </footer>
       </div>  
+
     <script type="text/javascript">
       window.addEventListener("scroll", function(){
           var header = document.querySelector("header");

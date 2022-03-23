@@ -58,3 +58,16 @@ $('.block-uns-work').slick({
   ]
 });
 
+$('reviews_all').slick({
+  rows: 2,
+  slidesToShow: 3,
+  responsive: [
+      {
+      breakpoint: 768,
+      settings: {
+         slidesToShow: 1           
+      }
+     }
+   ]            
+ });
+ 

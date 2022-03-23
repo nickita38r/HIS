@@ -6,35 +6,46 @@
 
 .team img
 {
-    margin:0;
-    
+    margin:0;    
 }
 .card .team_text {
     position: absolute;
     bottom: 0;
     color: aliceblue;
-    width: 100%;  
-        
+    width: 100%;          
 }
-.team_text:hover    .team_text_up {
-    display: block;
+.team_text:hover  .team_text_up {
+    height: 35;    
     }
-
+.team hr {
+    margin: 1% auto;
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    transition-duration: 2s;
+}
+.team_text:hover hr {
+    margin: 1% auto;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+        
+    }
 .team_text_up {
-        display: none;        
+        height: 0;
+        transition-duration: 2s;          
         }  
 .semi-transparent-button {
+    
     display: block;
     box-sizing: border-box;
-    margin: 0 auto;
-    padding: 3%;        
-    max-width: 200px;
-    border: 2px solid #ffffff;        
-    border-radius: 20px;
-    color: #fff;
+    margin: 2% auto;
+    padding: 1%;       
+    max-width: 160px;
+    border: 2px solid #ffffff;
+    background: none;        
+    border-radius: 8px;
     text-align: center;
-    text-decoration: none;       
-    transition: all 0.3s ease-out;
+    white-space:nowrap;
+    font-size:11px;
           }
 .team .card {
     position: relative;
@@ -44,11 +55,12 @@
 .team a {
     color: #ffffff; 
     text-decoration: none; 
-    
+    transition-duration: 700ms; 
    }
+
 .team a:hover {
     color: #ffffff; 
     text-decoration: underline; 
     text-decoration: none;
-    opacity: .5;
+    color: #D66228;
    }
