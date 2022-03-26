@@ -8,59 +8,72 @@
 {
     margin:0;    
 }
+
 .card .team_text {
+    background: rgba(0, 0, 0, 0.5); 
     position: absolute;
     bottom: 0;
     color: aliceblue;
     width: 100%;          
 }
-.team_text:hover  .team_text_up {
-    height: 35;    
-    }
+
+.card:hover  .team_text_up {
+    height: 35;
+}
+
 .team hr {
     margin: 1% auto;
     color: rgb(255, 255, 255);
     opacity: 0;
-    transition-duration: 2s;
+    transition-duration: 1.5s;
 }
-.team_text:hover hr {
+
+.card:hover hr {
     margin: 1% auto;
     color: rgb(255, 255, 255);
     opacity: 1;
         
-    }
+}
 .team_text_up {
-        height: 0;
-        transition-duration: 2s;          
-        }  
+    height: 0;
+    transition-duration: 0.4s;          
+}  
+
 .semi-transparent-button {
-    
     display: block;
     box-sizing: border-box;
     margin: 2% auto;
     padding: 1%;       
     max-width: 160px;
-    border: 2px solid #ffffff;
+    border: .13rem solid #ffffff;
     background: none;        
-    border-radius: 8px;
+    border-radius: 0.6rem;
     text-align: center;
     white-space:nowrap;
     font-size:11px;
-          }
+}
+
+.semi-transparent-button p{
+    margin-bottom:0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+}
+
 .team .card {
     position: relative;
     text-align: center;
     
 }
+
 .team a {
     color: #ffffff; 
     text-decoration: none; 
     transition-duration: 700ms; 
-   }
+}
 
 .team a:hover {
     color: #ffffff; 
     text-decoration: underline; 
     text-decoration: none;
     color: #D66228;
-   }
+}

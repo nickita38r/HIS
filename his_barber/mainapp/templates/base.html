@@ -4,6 +4,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-contact.css' %}">
@@ -99,7 +101,7 @@
             
             <div class="spec col-md-4"><div class="text_spec"><p> СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ </p>  <p class="spec_text">СКИДКА 20% НА ПЕРВУЮ СТРИЖКУ <br> КЭШБЭК ДО 7% ПО КАРТЕ «СВОИ ЛЮДИ»<br> ГАРАНТИЯ НА СТРИЖКУ И ОФОРМЛЕНИЕ БОРОДЫ<br>
               В ТЕЧЕНИИ 7 ДНЕЙ С МОМЕНТА ВИЗИТА</p></div></div>
-          </div>
+            </div>
             
         </div>
         <div class="price">
@@ -159,22 +161,24 @@
       <div class="team">
         <div class="row block-uns-context">
         {% for barber in barbers %}
-          <div class="col-md-3" style="padding: 0 0;">
+          <div class="col-md-3" style="padding: 0 .17rem;">
             <div class="card" >
               <img src="{{barber.image.url}}" alt="" style="aspect-ratio: 4 / 5;" ;>
-              <div class="team_text" style="background: rgba(44, 42, 42, 0.5); ">
+              <div class="team_text" >
               {{barber.lastName}}
               {{barber.firstName}}<br>
               <div class="team_text_up">
                 <hr color="#fff"  width="140" >
-              <a class="semi-transparent-button" href="{{barber.get_absolute_url}}">ЗАПИСАТЬСЯ К БАРБЕРУ</a>
+              <a class="semi-transparent-button" href="{{barber.get_absolute_url}}"><p>ЗАПИСАТЬСЯ К БАРБЕРУ</p></a>
               </div>
               </div>
             </div>
           </div>
-          {% endfor %}
+        {% endfor %}
         </div>
       </div>
+
+
       <div class="title">
         <div class="title-text" >
           НАШИ РАБОТЫ 
@@ -183,9 +187,9 @@
       <div class="work">
         <div class="row block-uns-work">
           {% for image in hearstyle %}
-          <div class="col-md-4" style="padding: 0 0;">
+          <div class="col-md-4" style="padding: 0 .2rem;">
             <div class="card" >
-              <img src="{{image.image.url}}" alt="" style="aspect-ratio: 2 / 3;" ;>
+              <img src="{{image.image.url}}" alt="" style="aspect-ratio: 3 / 4;" ;>
               <div class="work_text">
                 Работу выполнил Иван Иванов
               </div>

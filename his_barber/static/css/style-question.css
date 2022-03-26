@@ -5,6 +5,7 @@ details summary::-webkit-details-marker {
 details > summary {
 	list-style: none;
 	text-decoration:none;
+	transition: 0.15s background linear;
 }
 
 .accordion {
@@ -19,6 +20,7 @@ details > summary {
 	background-color: #000;
 	margin-top: 0.1em;
     border-radius: 0;
+	
     
 }
 
@@ -32,6 +34,7 @@ details > summary {
 {
     height: 1.5rem;
 	line-height: 1.5rem;
+	
     
 }
 
