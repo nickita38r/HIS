@@ -71,3 +71,4 @@ $('reviews_all').slick({
    ]            
  });
  
+  
