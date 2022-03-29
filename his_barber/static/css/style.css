@@ -1,94 +1,10 @@
-*{
-
+:root{
+    --sp-color:#D66228;
+    --bg:#E6E6E6;
 }
 body
 {
-	background: #dfd8d8;
-	min-height: 300vh;
-}
-
-.title
-{	
-	height: 3rem;
-	text-align: center;
-	line-height: 3rem;
-	background-color: #000;
-}
-.title .title-text
-{
-	color:#fff;
-}
-
-
-.banner
-{
-	position: relative;
-	width: 100%;
-	background-size: cover ;
-}
-.banner img
-{
-	position: relative;
-	width: 100%;
-	background-size: cover ;
-}
-
-.banner span
-{
-	position	: absolute;
-	color:#fff;
-	font-family: 'Montserrat';
-}
-
-.banner-title1
-{
-	top		: 4em;
-	left    : 18em;
-	
-}
-.banner_title2
-{
-
-	top		: 5em;
-	left    : 34.5em;
-
-}
-.banner_title3
-{
-
-	top		: 4em;
-	left    : 48em;
-
-}
-
-.black
-{
-	background: rgb(0, 0, 0);
-}
-
-.text-context
-{
-	color:#fff;
-	font-weight: 300;
-	font-family: 'Montserrat';
-}
-
-.container-context
-{
-	margin-left: 4rem;
-	margin-right: 4rem;
-}
-.conteiner-context2
-{
-	padding-top: 2em;
-	margin-left: 6rem;
-	margin-right: 6rem;
-}
-.foto2 {
-	padding-top: 10em;
-}
-.conteiner-context2 .row .col-md-4{
-	padding: 0em ;
+	background: var(--bg);
 }
 
 

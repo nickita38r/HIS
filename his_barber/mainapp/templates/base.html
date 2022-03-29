@@ -1,326 +1,98 @@
 {% load static %}
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Шрифты-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!--Локальные стили-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-contact.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-question.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-reviews.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-priceList.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-hearstyle.css' %}">
-    <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
-    <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style-slider.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css/style-fq.css' %}">
 
-    <title>HIS</title>
+    <title>HIS.Barber</title>
   </head>
-  <body>  
+  <body>
+    <!--Навигационная панель начало-->
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 mb-4 border-bottom bg-black sticky-top">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-md-0 text-decoration-none">
+        <h3 class="nav-logo">HIS</h3>
+      </a>
 
-    
-      <header class="header">
-        <a href="#" class="logo">HIS</a>
-        <nav class="navbar">
-          <a href="#service">Услуги</a>
-          <a href="#adres">Адрес</a>
-          <a href="#barbers">Мастера</a>
-          <a href="#portfolio">Работы</a>
-          <a href="#types">Стриж</a>
-        </nav>
-        <div class="nav-button">
-          <button class="botton-enroll">Запись</button>
-          <button class="botton-contact">Контакты</button>
-        </div>
-      </header>
-    
-      <section class="banner">
-        <img src="{% static 'img/border3.jpg' %}" alt="border">
-        <span class="banner-title1">
-          <p align="center">Только <font color="#D66228">качественные</font><br>мужские стрижки</p>
-        </span>
-        <span class="banner_title2">
-          <p align="center">С 2019 подстригли<br>более<font color="#D66228">10.000<br>клиентов</font></p>  
-        </span>
-        </span>
-        <span class="banner_title3">
-          <p align="center">Салон  <font color="#D66228">Premium</font><br>класса для мужчин</p>  
-        </span>  
-      </section>
-    
-      <div class="contact">
-
-            <p>ВРЕМЯ РАБОТЫ БАРБЕР ШОПА<br>(10:00 - 22:00 БЕЗ ВЫХОДНЫХ)</p>
-            <p>КРАСНОЯРСК<br>АЛЕКСЕЕВА 48А</p>
-            <p style="padding-left:6rem;">+7 (800) 555 35 35<br>+7 (800) 555 35 35</p>
-      </div>
-    
-
-      <div class="block-price">
-        <div class="title">
-          <span class="title-text">
-            УСЛУГИ И ЦЕНЫ  БАРБЕРШОПА
-          </span>
-        </div>
-        <div class="price">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="tab">
-                {% for type in types %}
-                  <a class="tablinks" onclick="openCity(event, '{{ type.name }}')" id="defaultOpen">{{ type.name }}</a>
-                {% endfor %}
-              </div>
-              <div class="offer">
-                <div class="row">
-                  <div class="col-md-4">Услуга</div>
-                  <div class="col-md-2">Барбер</div>
-                  <div class="col-md-3">Старший барбер</div>
-                  <div class="col-md-3">Топ барбер</div>
-                </div>
-                <hr color="#000000">
-                {% for type in types %}
-                  <div id="{{type.name}}" class="tabcontent">
-                    {% for item in type.price.all %}
-                      <div class="row">
-                        <div class="col-md-4">{{ item.name }}</div>
-                        <div class="col-md-2">{{item.priceBarber}}</div>
-                        <div class="col-md-3">{{item.priceBigBarber}}</div>
-                        <div class="col-md-3">{{item.priceTopBarber}}</div>
-                      </div>
-                    {% endfor %}
-                  </div>
-                {% endfor %}
-              </div>
-              
-            </div>
-            
-            <div class="spec col-md-4"><div class="text_spec"><p> СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ </p>  <p class="spec_text">СКИДКА 20% НА ПЕРВУЮ СТРИЖКУ <br> КЭШБЭК ДО 7% ПО КАРТЕ «СВОИ ЛЮДИ»<br> ГАРАНТИЯ НА СТРИЖКУ И ОФОРМЛЕНИЕ БОРОДЫ<br>
-              В ТЕЧЕНИИ 7 ДНЕЙ С МОМЕНТА ВИЗИТА</p></div></div>
-            </div>
-            
-        </div>
-        <div class="price">
-
-          <div class="specialOffer"></div>
-        </div>
-      </div>
-
-
-
-      <div class="title">
-        <div class="title-text" >
-          МУЖСКАЯ ПАРИКМАХЕРСКАЯ В КРАСНОЯРСКЕ 
-        </div>
-
-      </div>
-      <div class="black">
-        <div class="container-context">
-          <div class="row">
-            <div class="col-md-6 col-sm">
-              <img src="{% static 'img/photo1.png' %}" width="100%" alt="foto1">
-            </div>
-            <div class="col-md-6 col-sm">
-              <p class="text-context">HIS — мужская парикмахерская, основанная в 2019 году. Нас объединила большая цель: создать место, которого не существовало до этого и которое бы сделало жизнь мужчин и города лучше.</p>
-              <p class="text-context">HIS — философия, которая близка каждому мужчине. Строгость, лаконичность, сдержанность.</p>
-              <br>
-              <p class="text-context">Мы уважаем друг друга, но никому не подражаем. Мы знаем, что хотим получить от жизни. Нам не нужны правила и условности. Мы свободны от общественного мнения. HIS — не барбершоп, это мужская парикмахерская.</p>
-            </div>
-            <div class="whit"></div>  
-          </div>
-          <hr  color="#fff" size="40"> 
-        </div>
-        <div class="conteiner-context2">
-          <div class="row">
-            <div class="col-md-4">
-              <img src="{% static 'img/photo2.png' %}" width="100%" alt="foto2">
-            </div>
-            
-            <div class="col-md-4">
-              <img src="{% static 'img/photo3.png' %}" width="100%" alt="foto3">
-            </div>
-            <div class="col-md-4">
-              <img src="{% static 'img/photo4.png' %}" width="100%" alt="foto4">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="title">
-        <div class="title-text" >
-          КОМАНДА 
-        </div>
-      </div>
-      
-      
-
-      <div class="team">
-        <div class="row block-uns-context">
-        {% for barber in barbers %}
-          <div class="col-md-3" style="padding: 0 .17rem;">
-            <div class="card" >
-              <img src="{{barber.image.url}}" alt="" style="aspect-ratio: 4 / 5;" ;>
-              <div class="team_text" >
-              {{barber.lastName}}
-              {{barber.firstName}}<br>
-              <div class="team_text_up">
-                <hr color="#fff"  width="140" >
-              <a class="semi-transparent-button" href="{{barber.get_absolute_url}}"><p>ЗАПИСАТЬСЯ К БАРБЕРУ</p></a>
-              </div>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-        </div>
-      </div>
-
-
-      <div class="title">
-        <div class="title-text" >
-          НАШИ РАБОТЫ 
-        </div>
-      </div>
-      <div class="work">
-        <div class="row block-uns-work">
-          {% for image in hearstyle %}
-          <div class="col-md-4" style="padding: 0 .2rem;">
-            <div class="card" >
-              <img src="{{image.image.url}}" alt="" style="aspect-ratio: 3 / 4;" ;>
-              <div class="work_text">
-                Работу выполнил Иван Иванов
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         
-      <div class="title">
-        <div class="title-text" >
-          ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ 
-        </div>
+        <li><a href="#" class="nav-link-lo">Услуги</a></li>
+        <li><a href="#" class="nav-link-lo">Мастера</a></li>
+        <li><a href="#" class="nav-link-lo">Работы</a></li>
+        <li><a href="#" class="nav-link-lo">Отзывы</a></li>
+        <li><a href="#fq" class="nav-link-lo">FQ</a></li>
+        
+      </ul>
+
+      <div class="col-md-3 text-end head-btn">
+        <a class="btn-navbar sp-color-white">Запись</a>
+        <a class="btn-navbar white-color-sp">Контакты</a>
       </div>
 
-      <div class="accordion">
-          <div class="row">
-            <div class="col-md-6">
-              {% for question in qustionLeft %}
-              <details class="card">
-                  <summary class="card-header">
-                    <span class="question">
-                      <p>{{ question.title }}</p>
-                    </span>
-                    
-                  </summary>
-                  <div class="card-body">
-                    {{ question.answer }}
+    </header>
+    <!--Навигационная панель конец-->
+
+    <!--FQ начало-->
+    <section class="fq" id="fq">
+      <div class="row row-fq">
+
+        <div class="col-md-6 col-12 col-fq">
+          <div class="accordion accordion-flush" id="accordionFlushLeft">
+            {% for question in qustionLeft %}
+              <div class="accordion-item" >
+                <h2 class="accordion-header" id="flush-heading{{question.id}}">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{question.id}}" aria-expanded="false" aria-controls="flush-collapse{{question.id}}" >
+                    {{question.title}}
+                  </button>
+                </h2>
+                <div id="flush-collapse{{question.id}}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{question.id}}" data-bs-parent="#accordionFlushLeft">
+                  <div class="accordion-body">
+                    {{question.answer}}
                   </div>
-               </details>
-              {% endfor %}
-            </div> 
-             
-            <div class="col-md-6">
-              {% for question in qustionRight %}
-              <details class="card">
-                <summary class="card-header">
-                  <span class="question">
-                    <p>{{ question.title }}</p>
-                  </span>
-                  
-                </summary>
-                <div class="card-body">
-                  {{ question.answer }}
                 </div>
-              </details>
-              {% endfor %}
-            </div>
+              </div>
+            {% endfor %}
           </div>
-      </div>
-      <div class="title">
-        <div class="title-text" >
-          ОТЗЫВЫ 
         </div>
-      </div>
-      
 
-      <div class="reviews_all">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="head_reviews">
-              <span class="head">
-                <p style="margin : 0;">
-                  ВЛАДИМИР КАИНОВ
-                  ★★★★★ 10.20.2022
-                </p>
-              </span>  
-            </div>
-            <div class="body_reviews">
-              <span class="reviews"></span>  
-                <p>
-                  Лучший барбершоп из тех, что я успел посетить в Красноярске. Арт-директор — топовый барбер. Недешево, но цена оправдана.
-                </p>
-              </span>
-            </div>
-          </div>           
+        <div class="col-md-6 col-12 col-fq">
+          <div class="accordion accordion-flush" id="accordionFlushRight">
+            {% for question in qustionRight %}
+              <div class="accordion-item" >
+                <h2 class="accordion-header" id="flush-heading{{question.id}}">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{question.id}}" aria-expanded="false" aria-controls="flush-collapse{{question.id}}" >
+                    {{question.title}}
+                  </button>
+                </h2>
+                <div id="flush-collapse{{question.id}}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{question.id}}" data-bs-parent="#accordionFlushRight">
+                  <div class="accordion-body">
+                    {{question.answer}}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
         </div>
-        <div class="row">
-          <div class="col-md-3">
-            <div class="head_reviews">
-              <span class="head">
-                <p style="margin : 0;">
-                  ВЛАДИМИР КАИНОВ
-                  ★★★★★  10.20.2022
-                </p>
-              </span>  
-            </div>
-            <div class="body_reviews">
-              <span class="reviews"></span>  
-                <p>
-                  Лучший барбершоп из тех, что я успел посетить в Красноярске. Арт-директор — топовый барбер. Недешево, но цена оправдана.
-                </p>
-              </span>
-            </div>
-          </div>           
-        </div>
+
       </div>
-      <div class="footer">
-      <img src="{% static 'img/footer.jpg' %}" >  
-      <footer > 
-      </footer>
-      </div>  
+    </section>
+    <!--FQ конец-->
 
-    <script type="text/javascript">
-      window.addEventListener("scroll", function(){
-          var header = document.querySelector("header");
-          header.classList.toggle("sticky", window.scrollY > 0);
-        })
-    </script>
+    <!--Футер начало-->
+    <!--Футер конец-->
 
-    <script>
-      function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace("active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
-      document.getElementById("defaultOpen").click();
-    </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="{% static 'slick/slick.min.js'%}"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-    
+    <!--Скрипты Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
   </body>
 </html>

@@ -1,0 +1,42 @@
+.row-fq
+{
+	padding: 2rem 5%;
+}
+.col-fq
+{
+	padding:0 0;
+	margin:0 0;
+}
+
+.accordion-item
+{
+  border: 0px solid #000;
+  margin: .15rem 3%;
+  
+}
+
+.accordion-button  {
+  background: black;
+  color: aliceblue;
+}
+
+.accordion-button:not(.collapsed){
+  color: #D66228;
+  background: #000;
+}
+.accordion-button:focus {
+  border-color:#000;
+  box-shadow: 0 0 0 0 #000; 
+}
+
+.accordion-button::after {
+  display: none;
+}
+.accordion-body
+{
+  border: .1rem solid rgb(0, 0, 0);
+}
+.accordion-item:last-of-type .accordion-button.collapsed {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
