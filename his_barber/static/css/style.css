@@ -6,5 +6,27 @@ body
 {
 	background: var(--bg);
 }
+.row
+{
+    --bs-gutter-x:0;
+}
 
+.section
+{
+    margin-top:2rem;
+}
+
+.section-title
+{
+    background: #000;
+}
+.section-title-text
+{
+    text-align: center;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 300;
+    padding: .5rem 0;
+    font-family: 'Roboto', sans-serif;
+}
 

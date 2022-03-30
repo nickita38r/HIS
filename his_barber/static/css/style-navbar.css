@@ -2,7 +2,6 @@ header
 {
     font-family: 'Montserrat', sans-serif;
     padding: 1rem 5%;
- 
 }
 
 h3.nav-logo
@@ -69,3 +68,4 @@ a.nav-link-lo:hover
     border-color: var(--sp-color);
     transition: .3s;
 }
+

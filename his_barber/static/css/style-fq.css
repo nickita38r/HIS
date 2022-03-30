@@ -1,6 +1,7 @@
 .row-fq
 {
 	padding: 2rem 5%;
+  --bs-gutter-x:0;
 }
 .col-fq
 {
@@ -12,12 +13,14 @@
 {
   border: 0px solid #000;
   margin: .15rem 3%;
-  
+  font-family: 'Roboto', sans-serif;
 }
 
 .accordion-button  {
   background: black;
   color: aliceblue;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
 }
 
 .accordion-button:not(.collapsed){
@@ -35,6 +38,8 @@
 .accordion-body
 {
   border: .1rem solid rgb(0, 0, 0);
+  font-weight: 300;
+  font-size: .8rem;
 }
 .accordion-item:last-of-type .accordion-button.collapsed {
   border-bottom-right-radius: 0;

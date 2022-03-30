@@ -43,3 +43,12 @@ class GalaryHairstyle(models.Model):
     barber = models.ForeignKey(Barber, on_delete=models.CASCADE, verbose_name = 'Барбер', related_name='galary')
     chek = models.BooleanField(default=False)
     image = models.ImageField(verbose_name='Фото')
+
+class Review(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Имя")
+    data = models.DateField(verbose_name="Дата")
+    starts = models.IntegerField(verbose_name="Колличество звезд")
+    text = models.TextField(verbose_name="Отзыв")
+
+    def __str__(self):
+        return f'{self.name}'
