@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{% static 'css/style-navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-headers.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-info.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-fq.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-footer.css' %}">
 
@@ -30,7 +31,7 @@
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         
-        <li><a href="#" class="nav-link-lo">Услуги</a></li>
+        <li><a href="#menu" class="nav-link-lo">Услуги</a></li>
         <li><a href="#" class="nav-link-lo">Мастера</a></li>
         <li><a href="#" class="nav-link-lo">Работы</a></li>
         <li><a href="#" class="nav-link-lo">Отзывы</a></li>
@@ -78,33 +79,69 @@
 
     <!--Меню начало-->
     <section class="menu" id="menu">
-
+      
       <div class="section-title">
         <p class="section-title-text">УСЛУГИ И ЦЕНЫ БАРБЕРШОПА</p>
       </div>
 
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-        </li>
-      </ul>
-      <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade-left show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
-        <div class="tab-pane fade-in-left" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-        <div class="tab-pane fade-in-left" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+      <div class="menu-margin">
+        <div class="row">
+          <div class="col-lg-7">
+            <ul class="nav nav-pills mb-3 tab-item" id="pills-tab" role="tablist">
+              {% for type in types %}
+                <li class="nav-item tab-items" role="presentation">
+                    <a class="li-menu {% if type == types|first %} active {% endif %}" id="pills-{{type.id}}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{type.id}}" type="button" role="tab" aria-controls="pills-{{type.id}}" aria-selected="true">
+                      {{type.name}}
+                    </a>
+                </li>
+              {% endfor %}
+            </ul>
+            <div class="tab-content lou-mb" id="pills-tabContent">
+              <div class="row">
+                <div class="col price">Услуга</div>
+                <div class="col-1 d-none d-md-block"></div>
+                <div class="col text-center price">Барбер</div>
+                <div class="col text-center price">Старший барбер</div>
+                <div class="col text-center price">Топ барбер</div>
+              </div>
+              <hr class="mt-1">
+              {% for type in types %}
+                <div class="tab-pane fade {% if type == types|first %} show active {% endif %}" id="pills-{{type.id}}" role="tabpanel" aria-labelledby="pills-{{type.id}}-tab">
+                  {% for item in type.price.all %}
+                    <div class="row">
+                      <div class="col price">{{item.name}}</div>
+                      <div class="col-1 d-none d-md-block"></div>
+                      <div class="col text-center price">{{item.priceBarber}}₽</div>
+                      <div class="col text-center price">{{item.priceBigBarber}}₽</div>
+                      <div class="col text-center price">{{item.priceTopBarber}}₽</div>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-4">
+            <div class="sp-price">
+              <div class="sp-price-border">
+                <div class="sp-gor">
+                  <h6 class="text-center">СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ</h6>
+                    
+                    {% for sp in offers %}
+                      <p class="text-center">{{sp.offer}}</p>
+                    {% endfor %}
+
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+
       </div>
 
     </section>
     <!--Меню конец-->
-    <div class="square" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation="fade-in-right" data-mdb-animation-reset="true" style="animation-duration: 500ms;">
-      fade-in-right
-    </div>
+
     <!--FQ начало-->
     <section class="fq" id="fq">
 
