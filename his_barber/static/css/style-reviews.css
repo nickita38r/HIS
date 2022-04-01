@@ -1,31 +1,40 @@
-.reviews_all {
-    font-family: 'Montserrat';
-    margin-left: 5em;
-    margin-right: 5em;
-    margin-top: 4em;
-    
-    
+.review-cart-margin
+{
+    padding: .6rem;
 }
-.head_reviews {
-    background-color: black;
-    color: aliceblue;
-    word-wrap: break-word;
-    font-size: 0.9em;
-    padding: 4%;
-    
-       
+.cart-border
+{
+    border-radius: 0;
 }
-.head_reviews .head {
-    margin-bottom: 100em;
-    text-align: left;
+.card-header:first-child 
+{
+    border-radius: 0;
+}
+.card-header p 
+{
+    margin: 0;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+.t74{
+    height: 70%;
+    margin: 2rem 7%;
 }
 
-.body_reviews  {
-    background-color: aliceblue;
-    color: black;
-    word-wrap: break-word;
-    font-size: 0.8em;
-    padding: 2%;
-    margin-bottom: 5%;
-    border: 2px solid #000000;
-}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    background: #fff;
+    height: calc((100% - 30px) / 2) !important;
+
+  }

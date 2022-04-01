@@ -8,6 +8,8 @@
 
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <!--Шрифты-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!--Локальные стили-->
@@ -16,10 +18,12 @@
     <link rel="stylesheet" href="{% static 'css/style-headers.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-info.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-reviews.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-fq.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-footer.css' %}">
 
     <title>HIS.Barber</title>
+
   </head>
   <body>
   
@@ -78,7 +82,7 @@
     <!--Контакты конец-->
 
     <!--Меню начало-->
-    <section class="menu" id="menu">
+    <section class="menu" id="menu" style="margin-bottom:2rem;">
       
       <div class="section-title">
         <p class="section-title-text">УСЛУГИ И ЦЕНЫ БАРБЕРШОПА</p>
@@ -141,6 +145,66 @@
 
     </section>
     <!--Меню конец-->
+
+    <!--Отзывы начало-->
+    <section class="review" id="review">
+      <div class="section-title">
+        <p class="section-title-text">ОТЗЫВЫ</p>
+      </div>
+
+
+
+      <!--<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+
+        <div class="col review-cart-margin">
+          <div class="card border-dark h-100 cart-border">
+            <div class="card-header bg-black text-white">
+              <p>Владимир Каинов</p>
+              <p>★★★★★ <span>10.11.2021</span></p>
+            </div>
+            <div class="card-body text-dark">
+              <p class="card-text">
+                Лучший барбершоп из тех, что я успел посетить в Красноярске. Арт-директор — топовый барбер. Недешево, но цена оправдана.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>-->
+
+    </section>
+
+      <div class="t74">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card border-dark h-100 cart-border">
+                <div class="card-header bg-black text-white">
+                  <p>Владимир Каинов</p>
+                  <p>★★★★★ <span>10.11.2021</span></p>
+                </div>
+                <div class="card-body text-dark">
+                  <p class="card-text">
+                    Лучший барбершоп из тех, что я успел посетить в Красноярске. Арт-директор — топовый барбер. Недешево, но цена оправдана.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    
+    <!--Отзывы конец-->
 
     <!--FQ начало-->
     <section class="fq" id="fq">
@@ -212,6 +276,19 @@
 
     <!--Скрипты Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        grid: {
+          rows: 2,
+        },
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
   </body>
 </html>
