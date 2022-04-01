@@ -12,12 +12,16 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <!--Шрифты-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'slick/slick-theme.css' %}">
     <!--Локальные стили-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-headers.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-info.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-slider.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-reviews.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-fq.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-footer.css' %}">
@@ -146,6 +150,55 @@
     </section>
     <!--Меню конец-->
 
+    <!--Блок мастеров начало-->
+    <section class="master" id="master">
+      <div class="section-title">
+        <p class="section-title-text">МАСТЕРА</p>
+      </div>
+      <div class="team">
+        <div class="row block-uns-context">
+        {% for barber in barbers %}
+          <div class="col-md-3" style="padding: 0 .17rem;">
+            <div class="card card-barber">
+              <img src="{{barber.image.url}}" alt="" style="aspect-ratio: 4 / 5;" ;>
+              <div class="team_text" >
+              {{barber.lastName}}
+              {{barber.firstName}}<br>
+              <div class="team_text_up">
+                <hr color="#fff"  width="140" >
+              <a class="semi-transparent-button" href="{{barber.get_absolute_url}}"><p>ЗАПИСАТЬСЯ К БАРБЕРУ</p></a>
+              </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!--Блок мастеров конец-->
+
+    <!--Блок мастеров начало-->
+    <section class="works" id="works">
+      <div class="section-title">
+        <p class="section-title-text">РАБОТЫ</p>
+      </div>
+    </section>
+    <div class="work">
+      <div class="row block-uns-work">
+        {% for image in hearstyle %}
+        <div class="col-md-4" style="padding: 0 .2rem;">
+          <div class="card" >
+            <img src="{{image.image.url}}" alt="" style="aspect-ratio: 3 / 4;" ;>
+            <div class="work_text">
+              Работу выполнил Иван Иванов
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!--Блок мастеров конец-->
+
     <!--Отзывы начало-->
     <section class="review" id="review">
       <div class="section-title">
@@ -190,6 +243,9 @@
                 </div>
               </div>
             </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 2</div>
             <div class="swiper-slide">Slide 2</div>
             <div class="swiper-slide">Slide 3</div>
             <div class="swiper-slide">Slide 4</div>
@@ -275,8 +331,11 @@
     <!--Футер конец-->
 
     <!--Скрипты Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'slick/slick.min.js'%}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     <script>
       var swiper = new Swiper(".mySwiper", {
         slidesPerView: 4,

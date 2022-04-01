@@ -9,7 +9,7 @@
     margin:0;    
 }
 
-.card .team_text {
+.card-barber .team_text {
     background: rgba(0, 0, 0, 0.5); 
     position: absolute;
     bottom: 0;
@@ -17,8 +17,8 @@
     width: 100%;          
 }
 
-.card:hover  .team_text_up {
-    height: 35;
+.card-barber:hover  .team_text_up {
+    height: 35px;
 }
 
 .team hr {
@@ -28,7 +28,7 @@
     transition-duration: 1.5s;
 }
 
-.card:hover hr {
+.card-barber:hover hr {
     margin: 1% auto;
     color: rgb(255, 255, 255);
     opacity: 1;
@@ -43,9 +43,9 @@
     display: block;
     box-sizing: border-box;
     margin: 2% auto;
-    padding: 1%;       
-    max-width: 160px;
-    border: .13rem solid #ffffff;
+    padding: 1%;
+    border: .13rem solid #ffffff;       
+    max-width: 160px;   
     background: none;        
     border-radius: 0.6rem;
     text-align: center;
@@ -59,9 +59,10 @@
     font-weight: 500;
 }
 
-.team .card {
+.team .card-barber {
     position: relative;
     text-align: center;
+    border: none;
     
 }
 
