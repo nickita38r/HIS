@@ -4,7 +4,7 @@ $('.block-uns-context').slick({
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
-  dots: true,
+  
   responsive: [
     {
       breakpoint: 991,
@@ -12,7 +12,7 @@ $('.block-uns-context').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
-        dots: true,
+        
       }
     },
     {

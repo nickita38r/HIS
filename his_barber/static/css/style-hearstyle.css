@@ -5,10 +5,9 @@
 }
 .work img
 {
-    margin:0;
-    
+    margin:0;  
 }
-.card .work_text {
+.work .card-work .work_text {
   position: absolute;
   bottom: 0;
   color: rgb(255, 255, 255); 
@@ -16,11 +15,9 @@
   font-size: 0.7rem;
   margin: 1% 25%;
   white-space:nowrap;
-  
-  
 }
-.work .card {
+.work .card-work {
   position: relative;
   text-align: center;
-  
+  background-color: black;
 }

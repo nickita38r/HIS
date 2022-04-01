@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{% static 'css/style-info.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-hearstyle.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-reviews.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-fq.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-footer.css' %}">
@@ -187,7 +188,7 @@
       <div class="row block-uns-work">
         {% for image in hearstyle %}
         <div class="col-md-4" style="padding: 0 .2rem;">
-          <div class="card" >
+          <div class="card card-work" >
             <img src="{{image.image.url}}" alt="" style="aspect-ratio: 3 / 4;" ;>
             <div class="work_text">
               Работу выполнил Иван Иванов

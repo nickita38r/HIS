@@ -62,8 +62,7 @@
 .team .card-barber {
     position: relative;
     text-align: center;
-    border: none;
-    
+    border: none;   
 }
 
 .team a {
@@ -77,4 +76,13 @@
     text-decoration: underline; 
     text-decoration: none;
     color: #D66228;
+}
+.slick-dots li button:before {
+    color: #5d5755;
+}
+.slick-dots li.slick-active button:before {
+    color: #ffffff;
+}
+section.master {
+    background: black;
 }
