@@ -61,17 +61,16 @@ $('.block-uns-work').slick({
   ]
 });
 
-$('reviews_all').slick({
+$('#slick-review').slick({
   rows: 2,
-  slidesToShow: 3,
-  responsive: [
-      {
-      breakpoint: 768,
-      settings: {
-         slidesToShow: 1           
-      }
-     }
-   ]            
- });
+  dots: false,
+  arrows: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4
+});
+
+ 
  
   

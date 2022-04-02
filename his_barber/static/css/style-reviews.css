@@ -1,7 +1,23 @@
+
+.slick-wrapper-review
+{
+    margin: 0 3%    ;
+}
 .review-cart-margin
 {
     padding: .6rem;
 }
+
+
+
+.card-review{
+    height: 200px;
+    margin: .3rem .3rem;
+    overflow: auto;
+}
+.card-review::-webkit-scrollbar {
+    width: 0;
+  }
 .cart-border
 {
     border-radius: 0;
@@ -14,27 +30,8 @@
 {
     margin: 0;
 }
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-.t74{
-    height: 70%;
-    margin: 2rem 7%;
-}
-
-
-.swiper {
-    width: 100%;
+.card-body-review
+{
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .swiper-slide {
-    text-align: center;
-    background: #fff;
-    height: calc((100% - 30px) / 2) !important;
-
-  }
+    overflow: auto;
+}
