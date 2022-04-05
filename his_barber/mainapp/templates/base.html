@@ -210,96 +210,25 @@
 
       <div class="slick-wrapper slick-wrapper-review">
         <div id="slick-review">
+
+          {% for review in reviews %}
           <div class="slide-item">
             <div class="card card-review border-dark  cart-border">
               <div class="card-header bg-black text-white">
-                <p>Владимир Каинов</p>
-                <p>★★★★★ <span>10.11.2021</span></p>
+                <p class="card-header-name">{{ review.name }}</p>
+                <p class="card-header-stars">★★★★★ <span class="card-header-data">{{ review.data }}</span></p>
               </div>
               <div class="card-body text-dark">
                 <p class="card-text">
-                  Лучший барбершоп из тех, что               </p>
+                  {{ review.text }}              
+                </p>
               </div>
             </div>
           </div> 
-          <div class="slide-item">
-            <div class="card card-review border-dark  cart-border">
-              <div class="card-header bg-black text-white">
-                <p>Владимир Каинов</p>
-                <p>★★★★★ <span>10.11.2021</span></p>
-              </div>
-              <div class="card-body text-dark">
-                <p class="card-text">
-                  Лучший барбершоп из тех, что               </p>
-              </div>
-            </div>
-          </div>
-          <div class="slide-item">
-            <div class="card card-review border-dark  cart-border">
-              <div class="card-header bg-black text-white">
-                <p>Владимир Каинов</p>
-                <p>★★★★★ <span>10.11.2021</span></p>
-              </div>
-              <div class="card-body text-dark">
-                <p class="card-text">
-                  Лучший барбершоп из тех, что               </p>
-              </div>
-            </div>
-          </div>
-          <div class="slide-item">
-            <div class="card card-review border-dark  cart-border">
-              <div class="card-header bg-black text-white">
-                <p>Владимир Каинов</p>
-                <p>★★★★★ <span>10.11.2021</span></p>
-              </div>
-              <div class="card-body text-dark">
-                <p class="card-text">
-                  Лучший барбершоп из тех, чтоЛучший барбершоп из тех, чтоЛучший барбершоп из тех, чтоЛучший барбершоп из тех, чтоЛучший барбершоп из тех, чтоЛучший барбершоп из тех, чтоЛучший барбершоп из тех, чтоЛучший барбершоп из тех, чтоЛучший барбершоп из тех, чтоЛучший барбершоп из тех, чтоЛучший барбершоп из тех, что               </p>
-              </div>
-            </div>
-          </div>
+          {% endfor  %}
 
-
-
-
-          <div class="slide-item"><h3>2</h3></div>
-          <div class="slide-item"><h3>3</h3></div>
-          <div class="slide-item"><h3>4</h3></div>
-          <div class="slide-item"><h3>5</h3></div>
-          <div class="slide-item"><h3>6</h3></div>
-          <div class="slide-item"><h3>7</h3></div>
-          <div class="slide-item"><h3>8</h3></div>
-          <div class="slide-item"><h3>9</h3></div>
-          <div class="slide-item"><h3>10</h3></div>
-          <div class="slide-item"><h3>11</h3></div>
-          <div class="slide-item"><h3>12</h3></div>
-          <div class="slide-item"><h3>13</h3></div>
-          <div class="slide-item"><h3>14</h3></div>
-          <div class="slide-item"><h3>15</h3></div>
-          <div class="slide-item"><h3>16</h3></div>
-          <div class="slide-item"><h3>17</h3></div>
         </div>
       </div>  
-
-
-
-      <!--<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
-
-        <div class="col review-cart-margin">
-          <div class="card border-dark h-100 cart-border">
-            <div class="card-header bg-black text-white">
-              <p>Владимир Каинов</p>
-              <p>★★★★★ <span>10.11.2021</span></p>
-            </div>
-            <div class="card-body text-dark">
-              <p class="card-text">
-                Лучший барбершоп из тех, что я успел посетить в Красноярске. Арт-директор — топовый барбер. Недешево, но цена оправдана.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>-->
 
     </section>
     

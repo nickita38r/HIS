@@ -46,8 +46,8 @@ class GalaryHairstyle(models.Model):
 
 class Review(models.Model):
     name = models.CharField(max_length=100, verbose_name="Имя")
-    data = models.DateField(verbose_name="Дата")
-    starts = models.IntegerField(verbose_name="Колличество звезд")
+    data = models.CharField(max_length=10, verbose_name="Дата")
+    stars = models.IntegerField(verbose_name="Колличество звезд")
     text = models.TextField(verbose_name="Отзыв")
 
     def __str__(self):

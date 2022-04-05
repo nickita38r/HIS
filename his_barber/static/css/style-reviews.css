@@ -6,12 +6,13 @@
 .review-cart-margin
 {
     padding: .6rem;
+    font-family: "Roboto";
 }
 
 
 
 .card-review{
-    height: 200px;
+    height: 180px;
     margin: .3rem .3rem;
     overflow: auto;
 }
@@ -30,6 +31,29 @@
 {
     margin: 0;
 }
+
+
+.card-header-name
+{
+    font-size: .95rem;
+    font-weight: 300;
+}
+.card-header-stars
+{
+    font-size: .8rem;
+}
+.card-header-data
+{
+    font-size:.9rem;
+    font-weight: 300;
+}
+
+.card-text
+{
+    font-size:.8rem;
+    font-weight: 400;
+}
+
 .card-body-review
 {
     height: 100%;

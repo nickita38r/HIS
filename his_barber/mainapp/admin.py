@@ -8,4 +8,5 @@ admin.site.register(SpecialOffer)
 admin.site.register(Question)
 admin.site.register(Barber)
 admin.site.register(GalaryHairstyle)
+admin.site.register(Review)
 
