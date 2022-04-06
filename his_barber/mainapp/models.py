@@ -40,7 +40,7 @@ class Barber(models.Model):
         return reverse('barber_detail', kwargs={'slug': self.slug})
 
 class GalaryHairstyle(models.Model):
-    barber = models.ForeignKey(Barber, on_delete=models.CASCADE, verbose_name = 'Барбер', related_name='galary')
+    barber = models.ForeignKey(Barber, on_delete=models.CASCADE, verbose_name = 'Барбер', related_name='glaary')
     chek = models.BooleanField(default=False)
     image = models.ImageField(verbose_name='Фото')
 

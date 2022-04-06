@@ -1,23 +1,56 @@
-.work
+.works
 {
     padding: 0 5rem;
     background-color: rgb(0, 0, 0);
 }
-.work img
-{
-    margin:0;  
-}
-.work .card-work .work_text {
-  position: absolute;
-  bottom: 0;
-  color: rgb(255, 255, 255); 
-  opacity: 0.8;
-  font-size: 0.7rem;
-  margin: 1% 25%;
-  white-space:nowrap;
-}
+
 .work .card-work {
   position: relative;
-  text-align: center;
-  background-color: black;
+  border: 0px solid rgba(0,0,0,.125);
+  border-radius: 0;
+  background: black;
+	overflow: hidden;
 }
+
+.work img
+{
+  margin:0;  
+  filter: grayscale(1);
+	transition: .6s;
+}
+
+.work .card-work:hover img
+{
+  filter: grayscale(0);
+	transform: scale(1.1);
+}
+
+.work .card-work .work_text {
+  position: absolute;
+  width: 100%;
+  bottom: 2%;
+  color: rgb(255, 255, 255); 
+  font-size: 0.7rem;
+  white-space:nowrap;
+  
+}
+
+.work .card-work .work_text p
+{
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-style:normal;
+  text-decoration: 600;
+  
+  font-weight: 700;
+  color:#fff;
+  font-size: 17px;
+  transition: .6s;
+}
+
+
+
+
+
+
+
