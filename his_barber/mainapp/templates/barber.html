@@ -1,20 +1,35 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{% static 'css/test.css' %}">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <details>
-        <summary>Copyright 1999-2014.</summary>
-        <section>
-          <p> - by Refsnes Data. All Rights Reserved.</p>
-          <p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
-        </section>
-      </details>
-</body>
-</html>
+
+{% block content %}
+  <!--Навигационная панель-->
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1 mb-0 bg-black sticky-top">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-md-0 text-decoration-none">
+      <h3 class="nav-logo">HIS</h3>
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      
+      <li><a href="#menu" class="nav-link-lo">Услуги</a></li>
+      <li><a href="#" class="nav-link-lo">Мастера</a></li>
+      <li><a href="#" class="nav-link-lo">Работы</a></li>
+      <li><a href="#" class="nav-link-lo">Отзывы</a></li>
+      <li><a href="#fq" class="nav-link-lo">FQ</a></li>
+      
+    </ul>
+
+    <div class="col-md-3 text-end head-btn">
+      <a class="btn-navbar sp-color-white">Запись</a>
+      <a class="btn-navbar white-color-sp">Контакты</a>
+    </div>
+
+  </header>
+  <!--Навигационная панель-->
+
+  <!--Test-->
+  {{barber.firstName}}
+  {% for item in barber.galary.all %}
+    <img src="{{item.image.url}}" alt="" width="300">
+  {% endfor %}
+
+{% endblock %}

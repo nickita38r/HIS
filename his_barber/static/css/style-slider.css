@@ -9,12 +9,17 @@
     margin:0;    
 }
 
-.card-barber .team_text {
+.card-barber .team_text{
     background: rgba(0, 0, 0, 0.5); 
     position: absolute;
     bottom: 0;
-    color: aliceblue;
     width: 100%;          
+}
+.card-barber .team_text p{
+    margin:0;
+    font-size:1rem;
+    font-weight: 300;
+    color:#fff;
 }
 
 .card-barber:hover  .team_text_up {
@@ -25,39 +30,40 @@
     margin: 1% auto;
     color: rgb(255, 255, 255);
     opacity: 0;
-    transition-duration: 1.5s;
+    transition-duration: .0.8s;
+    margin-bottom: .3rem;
 }
 
 .card-barber:hover hr {
     margin: 1% auto;
     color: rgb(255, 255, 255);
     opacity: 1;
-        
+    margin-bottom: .3rem;
 }
+
 .team_text_up {
     height: 0;
     transition-duration: 0.4s;          
 }  
 
 .semi-transparent-button {
-    display: block;
-    box-sizing: border-box;
-    margin: 2% auto;
-    padding: 1%;
-    border: .13rem solid #ffffff;       
-    max-width: 160px;   
-    background: none;        
-    border-radius: 0.6rem;
+    border: 1px solid #ffffff;       
+    border-radius: 0.5rem;
     text-align: center;
-    white-space:nowrap;
-    font-size:11px;
+    text-decoration: none; 
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 400;
+    padding:.2rem .6rem;
+    transition-duration: 700ms;
+     
+}
+.semi-transparent-button:hover
+{
+    border-color: var(--sp-color);
+    color: var(--sp-color);
 }
 
-.semi-transparent-button p{
-    margin-bottom:0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 500;
-}
 
 .team .card-barber {
     position: relative;
@@ -65,18 +71,6 @@
     border: none;   
 }
 
-.team a {
-    color: #ffffff; 
-    text-decoration: none; 
-    transition-duration: 700ms; 
-}
-
-.team a:hover {
-    color: #ffffff; 
-    text-decoration: underline; 
-    text-decoration: none;
-    color: #D66228;
-}
 .slick-dots li button:before {
     color: #5d5755;
 }

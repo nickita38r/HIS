@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 
 from django.views.generic import DetailView, View
 from matplotlib.style import context
@@ -13,9 +14,6 @@ from .models import (
 )
 
 class BaseView(View):
-
-    
-
     def get(self, request, *args, **kwargs):
         types = ServiceType.objects.all()
         offer = SpecialOffer.objects.all()
@@ -35,7 +33,10 @@ class BaseView(View):
         return render(request, 'base.html', context)
 
 
-
 class BarberView(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'barber.html', context = {'barbers':Barber.objects.all()})
+    def get(request, slug):
+        barber= get_object_or_404(Barber, slug=slug)
+        context = {
+            "barber":barber
+        }
+        return render(request, 'barber.html', context)
